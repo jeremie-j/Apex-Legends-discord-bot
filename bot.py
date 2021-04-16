@@ -22,7 +22,9 @@ async def stats(ctx, *arg):
     await ctx.send(embed = embed)
 
 @ bot.command()
-async def coucou(ctx, *arg):
-    await ctx.send("non")
+async def map(ctx):
+    embed=await Request.getMap()
+    await ctx.send(embed = embed)
+
 
 bot.run(TOKEN)
