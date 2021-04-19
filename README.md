@@ -2,7 +2,7 @@
 Un bot permettant d'afficher des statistiques d'apex legends
 
 
-# ToDo :
+## ToDo :
 * Stats ✔️
 * Map ✔️
 * Link/Unlink ✔️
