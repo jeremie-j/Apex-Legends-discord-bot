@@ -2,9 +2,6 @@ import json
 import discord
 
 class File:
-    def __init__(self):
-        print("ui")
-
     async def saveUser(self,arg,discordID,discordName):
         discordID = discordID
         discordName = discordName
@@ -20,7 +17,58 @@ class File:
             data["comptes"].append({
                 "discordID":str(discordID),
                 "apexUser": str(apexName),
-                "plateforme": str(plateforme)
+                "plateforme": str(plateforme),
+                "stats":{
+                    "Bangalore":{
+                        "kills":[],
+                        "date":[]
+                    },"Bloodhound":{
+                        "kills":[],
+                        "date":[]
+                    },"Lifeline":{
+                        "kills":[],
+                        "date":[]
+                    },"Caustic":{
+                        "kills":[],
+                        "date":[]
+                    },"Gibraltar":{
+                        "kills":[],
+                        "date":[]
+                    },"Mirage":{
+                        "kills":[],
+                        "date":[]
+                    },"Pathfinder":{
+                        "kills":[],
+                        "date":[]
+                    },"Wraith":{
+                        "kills":[],
+                        "date":[]
+                    },"Octane":{
+                        "kills":[],
+                        "date":[]
+                    },"Wattson":{
+                        "kills":[],
+                        "date":[]
+                    },"Crypto":{
+                        "kills":[],
+                        "date":[]
+                    },"Revenant":{
+                        "kills":[],
+                        "date":[]
+                    },"Loba":{
+                        "kills":[],
+                        "date":[]
+                    },"Rampart":{
+                        "kills":[],
+                        "date":[]
+                    },"Horizon":{
+                        "kills":[],
+                        "date":[]
+                    },"Fuse":{
+                        "kills":[],
+                        "date":[]
+                    }
+                }
             })
             with open('accountLinks/save.txt', 'w') as outfile:
                 json.dump(data, outfile)
@@ -35,9 +83,15 @@ class File:
                     data["comptes"].pop(i)
                     with open('accountLinks/save.txt', 'w') as outfile:
                         json.dump(data, outfile)
-                    embed = discord.Embed(colour=discord.Colour(8722986), url="https://discordapp.com", description='Vote compte discord a été delié de votre compte Apex Legends')
+                    embed = discord.Embed(colour=discord.Colour(8722986), url="https://discordapp.com", description='Vote compte discord a été délié de votre compte Apex Legends.')
+                    embed.set_thumbnail(url="https://cdn.discordapp.com/avatars/834216621152403457/8c3f25fead893348950aabcaf66d8707.png")
+                    embed.set_footer(text="By Nave#1960")
+                    embed.set_author(name="Erreur")
                     return embed
-            embed = discord.Embed(colour=discord.Colour(8722986), url="https://discordapp.com", description="Votre compte n'a pas été trouvé")
+            embed = discord.Embed(colour=discord.Colour(8722986), url="https://discordapp.com", description="Votre compte n'a pas été trouvé.")
+            embed.set_thumbnail(url="https://cdn.discordapp.com/avatars/834216621152403457/8c3f25fead893348950aabcaf66d8707.png")
+            embed.set_footer(text="By Nave#1960")
+            embed.set_author(name="Erreur")
             return embed
 
     async def getUser(self,discordID):
