@@ -6,7 +6,7 @@ Un bot permettant d'afficher des statistiques d'apex legends
 * Stats ✔️
 * Map ✔️
 * Link/Unlink ✔️
-* saveData ❌
-* Graph ❌
+* saveData ✔️
+* Graph ✔️
 
 A venir 
