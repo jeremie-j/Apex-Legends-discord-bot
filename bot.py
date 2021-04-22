@@ -1,5 +1,6 @@
 import os
-import librairies
+import discord
+import dotenv
 from discord.ext import commands
 from discord.ext import tasks
 from commands.request import *
@@ -7,10 +8,10 @@ from commands.file import *
 from commands.graph import *
 from commands.help import *
 
-librairies.dotenv.load_dotenv()
+dotenv.load_dotenv()
 TOKEN = os.getenv('DISCORD_TOKEN')
 
-bot = librairies.discord.Client()
+bot = discord.Client()
 bot = commands.Bot(command_prefix=';')
 bot.remove_command("help")
 
