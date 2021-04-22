@@ -91,7 +91,6 @@ class File:
             embed = discord.Embed(colour=discord.Colour(8722986), url="https://discordapp.com", description="Votre compte n'a pas été trouvé.")
             embed.set_thumbnail(url="https://cdn.discordapp.com/avatars/834216621152403457/8c3f25fead893348950aabcaf66d8707.png")
             embed.set_footer(text="By Nave#1960")
-            embed.set_author(name="Erreur")
             return embed
 
     async def getUser(self,discordID):
