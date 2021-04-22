@@ -72,7 +72,7 @@ class File:
             })
             with open('accountLinks/save.txt', 'w') as outfile:
                 json.dump(data, outfile)
-            embed = discord.Embed(colour=discord.Colour(8722986), url="https://discordapp.com", description='Vote compte discord :"{0}" est bien lié avec votre compte Apex Legends "{1}"'.format(discordName,apexName))
+            embed = discord.Embed(colour=discord.Colour(8722986), url="https://discordapp.com", description=f'Vote compte discord à bien été lié avec votre compte Apex Legends "{apexName}"')
             return embed
     
     async def delUser(self,discordID):
