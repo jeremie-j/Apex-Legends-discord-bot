@@ -1,7 +1,7 @@
 import discord
-import librairies
 import requests
 import os
+import dotenv
 import json
 from commands.file import *
 from discord.ext import tasks
@@ -11,7 +11,7 @@ File=File()
 
 class Request:
     def __init__(self):
-        librairies.dotenv.load_dotenv()
+        dotenv.load_dotenv()
         self.trackerToken = os.getenv('TRACKER_TOKEN')
     
     async def getStats(self,arg):
