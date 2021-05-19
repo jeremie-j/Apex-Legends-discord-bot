@@ -3,77 +3,82 @@ import discord
 
 class File:
     async def saveUser(self,arg,discordID,discordName):
-        discordID = discordID
-        discordName = discordName
-        apexName = arg[0]
-        plateforme = arg[1]
-        with open('accountLinks/save.txt') as json_file:
-            data = json.load(json_file)
-            for i in data["comptes"]:
-                if i["discordID"] == str(discordID):
-                    embed = discord.Embed(colour=discord.Colour(8722986), url="https://discordapp.com", description="""Vote compte discord :"{0}" est déja lié avec votre compte Apex Legends "{1}", si cette liaison n'est pas correcte, vous pouvez la supprimer avec ;unLink""".format(discordName,apexName))
-                    return embed
-            
-            data["comptes"].append({
-                "discordID":str(discordID),
-                "apexUser": str(apexName),
-                "plateforme": str(plateforme),
-                "stats":{
-                    "Bangalore":{
-                        "kills":[],
-                        "date":[]
-                    },"Bloodhound":{
-                        "kills":[],
-                        "date":[]
-                    },"Lifeline":{
-                        "kills":[],
-                        "date":[]
-                    },"Caustic":{
-                        "kills":[],
-                        "date":[]
-                    },"Gibraltar":{
-                        "kills":[],
-                        "date":[]
-                    },"Mirage":{
-                        "kills":[],
-                        "date":[]
-                    },"Pathfinder":{
-                        "kills":[],
-                        "date":[]
-                    },"Wraith":{
-                        "kills":[],
-                        "date":[]
-                    },"Octane":{
-                        "kills":[],
-                        "date":[]
-                    },"Wattson":{
-                        "kills":[],
-                        "date":[]
-                    },"Crypto":{
-                        "kills":[],
-                        "date":[]
-                    },"Revenant":{
-                        "kills":[],
-                        "date":[]
-                    },"Loba":{
-                        "kills":[],
-                        "date":[]
-                    },"Rampart":{
-                        "kills":[],
-                        "date":[]
-                    },"Horizon":{
-                        "kills":[],
-                        "date":[]
-                    },"Fuse":{
-                        "kills":[],
-                        "date":[]
+        
+        try:
+            discordID = discordID
+            discordName = discordName
+            apexName = arg[0]
+            plateforme = arg[1]
+            with open('accountLinks/save.txt') as json_file:
+                data = json.load(json_file)
+                for i in data["comptes"]:
+                    if i["discordID"] == str(discordID):
+                        embed = discord.Embed(colour=discord.Colour(8722986), url="https://discordapp.com", description="""Vote compte discord :"{0}" est déja lié avec votre compte Apex Legends "{1}", si cette liaison n'est pas correcte, vous pouvez la supprimer avec ;unLink""".format(discordName,apexName))
+                        return embed
+                
+                data["comptes"].append({
+                    "discordID":str(discordID),
+                    "apexUser": str(apexName),
+                    "plateforme": str(plateforme),
+                    "stats":{
+                        "Bangalore":{
+                            "kills":[],
+                            "date":[]
+                        },"Bloodhound":{
+                            "kills":[],
+                            "date":[]
+                        },"Lifeline":{
+                            "kills":[],
+                            "date":[]
+                        },"Caustic":{
+                            "kills":[],
+                            "date":[]
+                        },"Gibraltar":{
+                            "kills":[],
+                            "date":[]
+                        },"Mirage":{
+                            "kills":[],
+                            "date":[]
+                        },"Pathfinder":{
+                            "kills":[],
+                            "date":[]
+                        },"Wraith":{
+                            "kills":[],
+                            "date":[]
+                        },"Octane":{
+                            "kills":[],
+                            "date":[]
+                        },"Wattson":{
+                            "kills":[],
+                            "date":[]
+                        },"Crypto":{
+                            "kills":[],
+                            "date":[]
+                        },"Revenant":{
+                            "kills":[],
+                            "date":[]
+                        },"Loba":{
+                            "kills":[],
+                            "date":[]
+                        },"Rampart":{
+                            "kills":[],
+                            "date":[]
+                        },"Horizon":{
+                            "kills":[],
+                            "date":[]
+                        },"Fuse":{
+                            "kills":[],
+                            "date":[]
+                        }
                     }
-                }
-            })
-            with open('accountLinks/save.txt', 'w') as outfile:
-                json.dump(data, outfile)
-            embed = discord.Embed(colour=discord.Colour(8722986), url="https://discordapp.com", description=f'Vote compte discord à bien été lié avec votre compte Apex Legends "{apexName}"')
-            return embed
+                })
+                with open('accountLinks/save.txt', 'w') as outfile:
+                    json.dump(data, outfile)
+                embed = discord.Embed(colour=discord.Colour(8722986), url="https://discordapp.com", description=f'Vote compte discord à bien été lié avec votre compte Apex Legends "{apexName}"')
+                return embed
+        except:
+            embed = discord.Embed(colour=discord.Colour(8722986), url="https://discordapp.com", description='Merci de bien verifier que votre commande ait la bonne syntaxe `;link <pseudo> <plateforme>`')
+            return embed 
     
     async def delUser(self,discordID):
         with open('accountLinks/save.txt') as json_file:
