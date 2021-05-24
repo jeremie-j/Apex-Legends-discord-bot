@@ -35,8 +35,10 @@ async def stats(ctx, *arg):
 
 @ bot.command()
 async def map(ctx):
-    embed=await Request.getMap()
-    await ctx.send(embed = embed)
+    BattleRoyale,Arena = await Request.getMap()
+    await ctx.send(embed = BattleRoyale)
+    if (Arena != None):
+        await ctx.send(embed = Arena)
 
 @ bot.command()
 async def link(ctx, *arg):
