@@ -45,3 +45,12 @@ Affiche un graphique de progression des kills sur la légende spécifié, le nom
 La commande `;graph ` affiche les graphiques disponibles a l'affichage pour le pseudo spécifié, ainsi que le nombre de points sur le graphique pour chaque légende.
 	
 ![Graphique compte](https://raw.githubusercontent.com/jeremie-j/Apex-Legends-discord-bot/main/img/graph%20.png)
+
+## ToDo
+- [x] Stats
+- [x] Map
+- [x] Link/Unlink
+- [x] saveData
+- [x] Graph
+- [ ] Stats sur la légende spécifiée
+- [ ] Graph "all" avec toutes les légendes
