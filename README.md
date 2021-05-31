@@ -7,13 +7,9 @@ Avec `<Argument Obligatoire>` et `[Argument Facultatif]`.
 
 <pseudo> sont les pseudos Origin.
 
-&nbsp;
-
-## `;help`
+### `;help`
 
 Affiche les commandes disponibles.
-
-&nbsp;
 
 ## `;stats <pseudo> [plateforme]`
 Plateformes : PC (par défault), PS4, XBOX.
