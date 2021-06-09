@@ -7,7 +7,7 @@ Avec `<Argument Obligatoire>` et `[Argument Facultatif]`.
 
 <pseudo> sont les pseudos Origin.
 
-### `;help`
+## `;help`
 
 Affiche les commandes disponibles.
 
